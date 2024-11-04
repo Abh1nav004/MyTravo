@@ -13,7 +13,7 @@
         <nav>
             <div class="logo">
                 <a href="index.php">
-                    <img src="https://placehold.co/200x50?text=MyTravo+Logo" alt="MyTravo Logo">
+                    <img src="./logo.png" alt="MyTravo Logo">
                 </a>
             </div>
             <ul class="nav-links">
