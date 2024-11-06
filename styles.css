@@ -84,8 +84,8 @@ nav {
 }
 
 .logo img {
-  height: 80px;
-  width: 140px;
+  height: 30px;
+  width: 60px;
 }
 
 .nav-links {
@@ -597,3 +597,4 @@ footer {
 .p-3 {
   padding: 1.5rem;
 }
+

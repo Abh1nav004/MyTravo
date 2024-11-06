@@ -1,3 +1,4 @@
+<?php require_once 'config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,8 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
+    <header class="site-header">
+        <nav class="navbar">
             <div class="logo">
                 <a href="index.php">
                     <img src="./logo.png" alt="MyTravo Logo">
@@ -24,8 +25,13 @@
                 <li><a href="contact.php">Contact</a></li>
             </ul>
             <div class="auth-links">
-                <a href="login.php" class="btn btn-outline">Login</a>
-                <a href="login.php#register" class="btn">Register</a>
+                <?php if (is_logged_in()): ?>
+                    <a href="user_profile.php" class="btn btn-outline">My Profile</a>
+                    <a href="logout.php" class="btn btn-outline">Logout</a>
+                <?php else: ?>
+                    <a href="login.php" class="btn btn-outline">Login</a>
+                    <a href="register.php" class="btn btn-outline">Register</a>
+                <?php endif; ?>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -35,4 +41,4 @@
         </nav>
     </header>
 
-    <main>
+    <main class="main-content">

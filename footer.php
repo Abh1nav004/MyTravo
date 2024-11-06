@@ -29,6 +29,7 @@
             <h3>Newsletter</h3>
             <form action="newsletter_signup.php" method="POST" class="newsletter-form">
                 <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="hidden" name="csrf_token" value="<?php echo generate_csrf_token(); ?>">
                 <button type="submit" class="btn">Subscribe</button>
             </form>
         </div>
