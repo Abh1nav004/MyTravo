@@ -16,13 +16,13 @@
     <?php
     // Sample destination data (replace with database query in production)
     $destinations = [
-        ['name' => 'Paris', 'country' => 'France', 'image' => 'https://placehold.co/300x200?text=Paris'],
-        ['name' => 'Tokyo', 'country' => 'Japan', 'image' => 'https://placehold.co/300x200?text=Tokyo'],
-        ['name' => 'New York', 'country' => 'USA', 'image' => 'https://placehold.co/300x200?text=New+York'],
-        ['name' => 'Bali', 'country' => 'Indonesia', 'image' => 'https://placehold.co/300x200?text=Bali'],
-        ['name' => 'Rome', 'country' => 'Italy', 'image' => 'https://placehold.co/300x200?text=Rome'],
-        ['name' => 'Sydney', 'country' => 'Australia', 'image' => 'https://placehold.co/300x200?text=Sydney'],
-        ['name' => 'Barcelona', 'country' => 'Spain', 'image' => 'https://placehold.co/300x200?text=Barcelona'],
+        ['name' => 'Paris', 'country' => 'France', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Paris_Night.jpg/1920px-Paris_Night.jpg'],
+        ['name' => 'Tokyo', 'country' => 'Japan', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg/1920px-Tokyo_Shibuya_Scramble_Crossing_2018-10-09.jpg'],
+        ['name' => 'New York', 'country' => 'USA', 'image' => 'https://media.architecturaldigest.com/photos/5da74823d599ec0008227ea8/16:9/w_2560%2Cc_limit/GettyImages-946087016.jpg'],
+        ['name' => 'Bali', 'country' => 'Indonesia', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Bali%27s_Gunung_Agung_seen_at_sunset_from_Gunung_Rinjani.jpg/330px-Bali%27s_Gunung_Agung_seen_at_sunset_from_Gunung_Rinjani.jpg'],
+        ['name' => 'Rome', 'country' => 'Italy', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Rome_skyline_panorama.jpg/417px-Rome_skyline_panorama.jpg'],
+        ['name' => 'Sydney', 'country' => 'Australia', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg/402px-Sydney_Opera_House_and_Harbour_Bridge_Dusk_%282%29_2019-06-21.jpg'],
+        ['name' => 'Barcelona', 'country' => 'Spain', 'image' => 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Aerial_view_of_Barcelona%2C_Spain_%2851227309370%29_%28cropped%29.jpg/1920px-Aerial_view_of_Barcelona%2C_Spain_%2851227309370%29_%28cropped%29.jpg'],
         ['name' => 'Dubai', 'country' => 'UAE', 'image' => 'https://placehold.co/300x200?text=Dubai'],
     ];
 
