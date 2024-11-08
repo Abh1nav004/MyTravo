@@ -1,18 +1,32 @@
 <?php
-require_once 'config.php';
-require_login();
-
-$user_id = $_SESSION['user_id'];
-
-// Fetch user's bookings
-$stmt = $conn->prepare("SELECT * FROM bookings WHERE user_id = ? ORDER BY created_at DESC");
-$stmt->bind_param("i", $user_id);
-$stmt->execute();
-$result = $stmt->get_result();
-$bookings = $result->fetch_all(MYSQLI_ASSOC);
-$stmt->close();
-
 include 'header.php';
+
+// Database connection
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mytravo";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Assuming user_id is 1 for now, you should replace this with the actual logged-in user ID
+$user_id = 1;
+
+$sql = "SELECT * FROM bookings WHERE user_id = $user_id";
+$result = $conn->query($sql);
+
+$bookings = [];
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $bookings[] = $row;
+    }
+}
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -22,13 +36,71 @@ include 'header.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Bookings - MyTravo</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .book-another-trip {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            background-color: #28a745;
+            color: #fff;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .book-another-trip:hover {
+            background-color: #218838;
+        }
+        .bookings-list {
+            margin-top: 20px;
+        }
+        .booking-card {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .booking-card h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .booking-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .booking-card p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
 </head>
 <body>
     <main class="container">
         <h1>My Bookings</h1>
         
+        <a href="booking_process.php" class="book-another-trip">Book Another Trip</a>
+        
         <?php if (empty($bookings)): ?>
-            <p>You haven't made any bookings yet. <a href="booking.php">Book a trip now!</a></p>
+            <p>You haven't made any bookings yet. <a href="booking_process.php">Book a trip now!</a></p>
         <?php else: ?>
             <div class="bookings-list">
                 <?php foreach ($bookings as $booking): ?>
@@ -43,16 +115,10 @@ include 'header.php';
                         <?php if ($booking['total_price']): ?>
                             <p>Total Price: $<?php echo number_format($booking['total_price'], 2); ?></p>
                         <?php endif; ?>
-                        <p>Booked on: <?php echo date('F j, Y', strtotime($booking['created_at'])); ?></p>
-                        <a href="booking_details.php?id=<?php echo $booking['id']; ?>" class="btn btn-outline">View Details</a>
                     </div>
                 <?php endforeach; ?>
             </div>
         <?php endif; ?>
     </main>
-
-    <?php include 'footer.php'; ?>
-
-    <script src="script.js"></script>
 </body>
 </html>
