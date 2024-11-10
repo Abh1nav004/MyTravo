@@ -9,7 +9,7 @@
     <div class="about-container">
         <div class="about-text">
             <h2>Our Story</h2>
-            <p>MyTravo was founded in 2010 with a simple mission: to make travel planning easy, enjoyable, and accessible to everyone. What started as a small team of travel enthusiasts has grown into a global community of explorers and adventurers.</p>
+            <p>MyTravo was founded in 2024 with a simple mission: to make travel planning easy, enjoyable, and accessible to everyone. What started as a small team of travel enthusiasts has grown into a global community of explorers and adventurers.</p>
             <p>We believe that travel has the power to transform lives, broaden perspectives, and create lasting memories. That's why we're dedicated to providing you with the best tools, resources, and support to make your travel dreams a reality.</p>
         </div>
         <div class="about-image">
